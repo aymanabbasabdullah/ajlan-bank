@@ -1,0 +1,86 @@
+/*
+ * Scroll reveal. Elements are visible by default; useReveal sets data-reveal="pending"
+ * only after JavaScript runs, then "shown" when the element enters the viewport.
+ */
+[data-reveal='pending'] {
+  opacity: 0;
+  transform: translateY(12px);
+}
+
+[data-reveal='shown'] {
+  opacity: 1;
+  transform: none;
+  transition:
+    opacity 600ms var(--ease-out-soft),
+    transform 600ms var(--ease-out-soft);
+}
+
+[data-reveal-stagger][data-reveal] {
+  opacity: 1;
+  transform: none;
+}
+
+[data-reveal-stagger][data-reveal='pending'] > * {
+  opacity: 0;
+  transform: translateY(12px);
+}
+
+[data-reveal-stagger][data-reveal='shown'] > * {
+  opacity: 1;
+  transform: none;
+  transition:
+    opacity 600ms var(--ease-out-soft),
+    transform 600ms var(--ease-out-soft);
+}
+
+[data-reveal-stagger][data-reveal='shown'] > :nth-child(2) { transition-delay: 80ms; }
+[data-reveal-stagger][data-reveal='shown'] > :nth-child(3) { transition-delay: 160ms; }
+[data-reveal-stagger][data-reveal='shown'] > :nth-child(4) { transition-delay: 240ms; }
+[data-reveal-stagger][data-reveal='shown'] > :nth-child(5) { transition-delay: 320ms; }
+[data-reveal-stagger][data-reveal='shown'] > :nth-child(6) { transition-delay: 400ms; }
+[data-reveal-stagger][data-reveal='shown'] > :nth-child(7) { transition-delay: 480ms; }
+[data-reveal-stagger][data-reveal='shown'] > :nth-child(n + 8) { transition-delay: 560ms; }
+
+/* Mobile drawer (native <dialog>). */
+dialog[data-drawer] {
+  opacity: 0;
+  transform: translateY(-8px);
+  transition:
+    opacity 180ms var(--ease-out-soft),
+    transform 180ms var(--ease-out-soft),
+    overlay 180ms allow-discrete,
+    display 180ms allow-discrete;
+}
+
+dialog[data-drawer][open] {
+  opacity: 1;
+  transform: none;
+  transition-duration: 250ms;
+}
+
+@starting-style {
+  dialog[data-drawer][open] {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+}
+
+dialog[data-drawer]::backdrop {
+  background-color: rgba(42, 29, 71, 0.24);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-reveal],
+  [data-reveal] > *,
+  dialog[data-drawer] {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+  }
+}

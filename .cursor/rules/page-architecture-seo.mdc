@@ -1,0 +1,20 @@
+---
+description: Page architecture, reusable UI, content, RTL, and SEO standards for the Ajlan Bank website
+alwaysApply: true
+---
+
+# Page Architecture and SEO
+
+- Read `docs/PROJECT_PLAN.md` and `DESIGN.md` before adding a page or section; `DESIGN.md` is the visual source of truth.
+- Follow the feature-module structure: `src/modules/<feature>/{index.ts, README.md, data/, types/, pages/<page>/, components/, hooks/, utils/, services/}` and `src/shared/`.
+- Pages only compose sections. Each section is its own component with a co-located `*.styles.ts`; no inline `style={{}}`.
+- Never write visible Arabic copy in JSX. Put it in typed `data/*.ar.ts` files (shared strings in `src/shared/data/site.ar.ts`) so English can be added as `*.en.ts` later.
+- Import other modules only through their barrel (`@/modules/<feature>`). Promote a component to `shared/` only when it has a second real consumer.
+- Keep TypeScript types explicit at data and component boundaries. Prefix interfaces with `I`. Do not use `any` or duplicate the same data shape.
+- Use design tokens only (`bg-canvas`, `text-ink`, `border-line`, `bg-brand-600`); never raw hex values or default Tailwind palettes. No gradients anywhere.
+- The site is Arabic RTL: use logical utilities (`ms-`, `me-`, `ps-`, `pe-`, `start-`, `end-`, `text-start`) and flip directional icons with `rtl:-scale-x-100`.
+- Give every route a unique Arabic title, description, canonical URL, and Open Graph metadata through the shared `Seo` component; add JSON-LD (`BankOrCreditUnion`, `BreadcrumbList`) where relevant.
+- Use semantic HTML, one clear `h1`, logical heading levels, labeled controls, visible focus, and 44px minimum interactive targets.
+- Design mobile-first for 320, 375, 768, 1024, and 1440px; prevent horizontal overflow and reserve visual space to avoid layout shift.
+- Keep banking content formal, calm, and verifiable. License numbers, SWIFT, phone numbers, and figures live only in `site.ar.ts` and must be verified before launch. Label calculators as indicative.
+- Avoid adding a dependency when a small reusable component or hook is sufficient. Run `npm run lint` and `npm run build` before handoff.

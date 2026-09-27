@@ -1,0 +1,15 @@
+export const contactAsideStyles = {
+  aside: 'space-y-5',
+  title: 'text-lg font-semibold',
+  list: 'mt-5 space-y-4',
+  term: 'text-sm text-muted',
+  value: 'mt-1 text-ink',
+  code: 'mt-1 font-semibold tracking-wide text-ink',
+  fraud: 'rounded-xl border border-danger/20 bg-danger-bg p-6',
+  fraudHeader: 'flex items-center gap-2',
+  fraudIcon: 'shrink-0 text-danger',
+  fraudTitle: 'text-lg font-semibold',
+  fraudText: 'mt-3 text-sm leading-[1.8] text-body',
+  fraudEmail: 'mt-4 block font-semibold text-danger underline-offset-4 hover:underline',
+  fraudLink: 'mt-4',
+} as const

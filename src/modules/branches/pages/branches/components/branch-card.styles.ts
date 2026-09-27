@@ -1,0 +1,16 @@
+export const branchCardStyles = {
+  card: 'flex h-full flex-col',
+  header: 'flex items-start justify-between gap-3',
+  name: 'text-lg font-semibold',
+  city: 'mt-0.5 text-sm text-muted',
+  details: 'mt-5 space-y-3 text-[15px] text-body',
+  row: 'flex items-start gap-3',
+  term: 'mt-0.5 shrink-0',
+  icon: 'text-brand-500',
+  phone: 'tabular font-medium text-ink transition-colors duration-200 hover:text-brand-700',
+  services: 'mt-5 flex-1',
+  serviceList: 'flex flex-wrap gap-1.5',
+  service: 'rounded-md bg-sand-100 px-2.5 py-1 text-[13px] font-medium text-sand-700',
+  map: 'mt-6',
+  srOnly: 'sr-only',
+} as const
