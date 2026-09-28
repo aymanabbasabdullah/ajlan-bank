@@ -1,8 +1,6 @@
-import { ShieldCheckIcon } from '@phosphor-icons/react'
 import { ButtonLink, Container, IslamicPattern, Reveal, TextLink } from '@/shared/components/ui'
 import { MEDIA } from '@/shared/data/media'
 import { MEDIA_COPY } from '@/shared/data/media.ar'
-import { SITE } from '@/shared/data/site.ar'
 import type { IHomeHero, IVisaCard } from '../../../../types/home.types'
 import { HeroVisaDeck } from './HeroVisaDeck'
 import { homeHeroStyles as styles } from './home-hero.styles'
