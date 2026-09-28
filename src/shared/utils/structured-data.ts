@@ -17,7 +17,7 @@ export function bankJsonLd(): JsonLd {
     alternateName: brand.latinName,
     description: brand.description,
     url: SITE_URL,
-    logo: `${SITE_URL}/favicon.svg`,
+    logo: `${SITE_URL}/favicon.png`,
     foundingDate: String(brand.foundedYear),
     telephone: contact.internationalPhone,
     email: contact.email,
