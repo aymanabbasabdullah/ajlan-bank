@@ -2,6 +2,8 @@ import { useId } from 'react'
 import { Seo } from '@/shared/components/layout'
 import { CtaBanner, FeaturesSection, PageHero, StatList } from '@/shared/components/sections'
 import { Section, SectionHeading } from '@/shared/components/ui'
+import { ROUTES } from '@/shared/constants/routes'
+import { heroMediaForPath } from '@/shared/data/media.ar'
 import { SITE } from '@/shared/data/site.ar'
 import { bankJsonLd } from '@/shared/utils/structured-data'
 import { ABOUT_CONTENT } from '../../data/about.ar'
@@ -14,11 +16,18 @@ import { VisionMission } from './components/vision-mission/VisionMission'
 export function AboutPage() {
   const content = ABOUT_CONTENT
   const figuresHeadingId = useId()
+  const heroMedia = heroMediaForPath(ROUTES.about)
 
   return (
     <>
       <Seo meta={content.seo} jsonLd={[bankJsonLd()]} breadcrumbs={content.breadcrumbs} />
-      <PageHero title={content.header.title} lead={content.header.lead} breadcrumbs={content.breadcrumbs} />
+      <PageHero
+        title={content.header.title}
+        lead={content.header.lead}
+        breadcrumbs={content.breadcrumbs}
+        media={heroMedia?.media}
+        mediaCopy={heroMedia?.mediaCopy}
+      />
       <AboutStory story={content.story} />
       <VisionMission vision={content.vision} mission={content.mission} />
       <FeaturesSection header={content.valuesHeader} items={content.values} columns={4} />

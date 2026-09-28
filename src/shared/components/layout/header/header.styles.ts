@@ -12,7 +12,7 @@ export const headerStyles = {
   nav: 'hidden lg:block',
   navList: 'flex items-center gap-1',
   navLink:
-    'relative inline-flex min-h-11 items-center rounded-lg px-3 text-[15px] font-medium text-body transition-colors duration-200 hover:bg-brand-50 hover:text-brand-700',
+    'relative inline-flex min-h-11 items-center rounded-lg px-3 text-[15px] font-medium text-body transition-colors duration-200 hover:bg-sand-100 hover:text-brand-700',
   navLinkActive:
     'text-brand-700 after:absolute after:inset-x-3 after:bottom-1 after:h-0.5 after:rounded-full after:bg-brand-600',
   actions: 'flex items-center gap-2',

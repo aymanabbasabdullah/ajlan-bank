@@ -1,9 +1,9 @@
 export const phoneMockupStyles = {
-  stage: 'relative mx-auto flex w-full max-w-md justify-center py-6 lg:col-span-6',
-  backdrop: 'absolute inset-x-6 inset-y-16 rounded-3xl bg-sand-100',
-  frame: 'relative w-[270px] rounded-[2.5rem] bg-brand-900 p-2.5 shadow-sm md:w-[290px]',
+  stage: 'relative mx-auto flex w-full max-w-md justify-center py-2',
+  backdrop: 'absolute inset-x-8 inset-y-10 rounded-3xl bg-ink/8',
+  frame: 'relative w-[250px] rounded-[2.5rem] bg-ink p-2.5 shadow-sm md:w-[270px]',
   screen: 'relative overflow-hidden rounded-[2rem] bg-canvas px-4 pt-9 pb-6',
-  notch: 'absolute inset-x-0 top-2.5 mx-auto h-5 w-20 rounded-full bg-brand-900',
+  notch: 'absolute inset-x-0 top-2.5 mx-auto h-5 w-20 rounded-full bg-ink',
   greeting: 'text-sm font-semibold text-ink',
 
   balanceCard: 'mt-3 flex flex-col rounded-2xl bg-brand-600 p-4 text-white',

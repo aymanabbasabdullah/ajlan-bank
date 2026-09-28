@@ -7,8 +7,8 @@ alwaysApply: false
 # Purposeful Motion and Hover
 
 - Give every interactive card, button, link, and chip a clear hover, `:focus-visible`, and `:active` response.
-- Keep banking motion calm: small translations (2px lift, 12px reveal), `scale(0.98)` on press, and color or border shifts. No bounce, parallax, or looping animation.
-- Use the motion tokens from `src/shared/styles/motion.css`: 150–200ms for interaction, 600ms with `cubic-bezier(0.16,1,0.3,1)` for section reveals, and 80ms stagger.
+- Keep banking motion calm: small translations (2px lift, 10px reveal), `scale(0.98)` on press, and color or border shifts. Photographs carry vitality — no bounce, parallax, or looping animation.
+- Use the motion tokens from `src/shared/styles/motion.css`: 150–300ms for interaction, 500ms with `cubic-bezier(0.16,1,0.3,1)` for section reveals, and 70ms stagger.
 - Animate only `transform` and `opacity`. Shadows change only on hover and stay within the `DESIGN.md` values (max 0.06 opacity).
 - Use the shared `Reveal` component and `useReveal` hook (IntersectionObserver); never listen to `scroll` for reveals.
 - Content must be visible without JavaScript and never depend on animation.

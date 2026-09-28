@@ -2,6 +2,7 @@ import { useParams } from 'react-router'
 import { NotFoundPage } from '@/modules/not-found'
 import { Seo } from '@/shared/components/layout'
 import { CtaBanner, FaqSection, PageHero } from '@/shared/components/sections'
+import { heroMediaForProduct } from '@/shared/data/media.ar'
 import { PRODUCT_DETAIL_CONTENT } from '../../data/product-detail.ar'
 import { getCatalog, getProduct, getProductHref, getRelatedProducts, isProductSection } from '../../utils/catalog'
 import { ProductFacts } from './components/ProductFacts'
@@ -26,7 +27,12 @@ export function ProductDetailPage() {
   return (
     <>
       <Seo meta={{ title: product.name, description: product.summary, path }} breadcrumbs={breadcrumbs} />
-      <PageHero title={product.name} lead={product.summary} breadcrumbs={breadcrumbs}>
+      <PageHero
+        title={product.name}
+        lead={product.summary}
+        breadcrumbs={breadcrumbs}
+        {...heroMediaForProduct(product.slug)}
+      >
         <ProductFacts label={content.factsLabel} facts={product.facts} />
       </PageHero>
       <ProductFeatures title={content.featuresTitle} description={product.description} features={product.features} />

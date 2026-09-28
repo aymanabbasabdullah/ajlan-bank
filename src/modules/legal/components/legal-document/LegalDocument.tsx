@@ -1,6 +1,7 @@
 import { useId } from 'react'
 import { Seo } from '@/shared/components/layout'
 import { PageHero } from '@/shared/components/sections'
+import { heroMediaForPath } from '@/shared/data/media.ar'
 import { Section } from '@/shared/components/ui'
 import { formatDate } from '@/shared/utils/format'
 import { LEGAL_UI } from '../../data/legal-ui.ar'
@@ -18,7 +19,12 @@ export function LegalDocument({ document }: ILegalDocumentProps) {
   return (
     <>
       <Seo meta={document.seo} breadcrumbs={document.breadcrumbs} />
-      <PageHero title={document.header.title} lead={document.header.lead} breadcrumbs={document.breadcrumbs}>
+      <PageHero
+        title={document.header.title}
+        lead={document.header.lead}
+        breadcrumbs={document.breadcrumbs}
+        {...heroMediaForPath(document.seo.path)}
+      >
         <p className={styles.updated}>
           {ui.updatedLabel}: <time dateTime={document.updatedAt}>{formatDate(document.updatedAt)}</time>
         </p>

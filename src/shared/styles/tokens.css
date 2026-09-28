@@ -12,18 +12,18 @@
   --color-brand-700: #4e3782;
   --color-brand-900: #2a1d47;
 
-  --color-canvas: #fbf8f3;
+  --color-canvas: #f7f6f3;
   --color-surface: #ffffff;
-  --color-sand-100: #f5efe4;
-  --color-sand-200: #eadfcc;
-  --color-sand-500: #b89a6a;
-  --color-sand-700: #7a6240;
+  --color-sand-100: #f0efea;
+  --color-sand-200: #e6e4df;
+  --color-sand-500: #9a9486;
+  --color-sand-700: #5c5648;
 
-  --color-ink: #1f1a2b;
-  --color-body: #4a4458;
-  --color-muted: #6e6780;
-  --color-line: #ece7df;
-  --color-line-strong: #ddd5c8;
+  --color-ink: #141218;
+  --color-body: #3f3c45;
+  --color-muted: #6b6673;
+  --color-line: #e6e4df;
+  --color-line-strong: #d4d1c9;
 
   --color-success: #2f6b4f;
   --color-success-bg: #e8f1ec;
@@ -33,9 +33,9 @@
   --font-sans: 'IBM Plex Sans Arabic', system-ui, 'Segoe UI', Tahoma, sans-serif;
 
   --shadow-*: initial;
-  --shadow-xs: 0 1px 2px rgba(42, 29, 71, 0.04);
-  --shadow-sm: 0 2px 8px rgba(42, 29, 71, 0.05);
-  --shadow-hover: 0 6px 20px rgba(42, 29, 71, 0.06);
+  --shadow-xs: 0 1px 2px rgba(20, 18, 24, 0.04);
+  --shadow-sm: 0 2px 8px rgba(20, 18, 24, 0.05);
+  --shadow-hover: 0 8px 24px rgba(20, 18, 24, 0.06);
 
   --ease-out-soft: cubic-bezier(0.16, 1, 0.3, 1);
 }

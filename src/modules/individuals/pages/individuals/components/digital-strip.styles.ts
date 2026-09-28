@@ -1,6 +1,7 @@
 export const digitalStripStyles = {
   grid: 'grid items-start gap-10 lg:grid-cols-12',
-  text: 'lg:col-span-6',
+  text: 'lg:col-span-7',
+  media: 'lg:col-span-5',
   title: 'text-[26px] leading-[1.35] font-semibold md:text-[32px]',
   description: 'mt-4 max-w-xl text-[17px] leading-[1.8] text-body md:text-lg',
   features: 'mt-8 space-y-4',

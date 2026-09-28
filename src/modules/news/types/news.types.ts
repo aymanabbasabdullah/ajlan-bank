@@ -1,3 +1,4 @@
+import type { MediaId } from '@/shared/data/media'
 import type { ILink, IPageHeader, ISeoMeta } from '@/shared/types'
 
 export interface INewsArticle {
@@ -7,6 +8,7 @@ export interface INewsArticle {
   category: string
   excerpt: string
   body: string[]
+  mediaId: MediaId
 }
 
 export interface INewsContent {

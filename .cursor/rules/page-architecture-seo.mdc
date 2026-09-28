@@ -12,6 +12,8 @@ alwaysApply: true
 - Import other modules only through their barrel (`@/modules/<feature>`). Promote a component to `shared/` only when it has a second real consumer.
 - Keep TypeScript types explicit at data and component boundaries. Prefix interfaces with `I`. Do not use `any` or duplicate the same data shape.
 - Use design tokens only (`bg-canvas`, `text-ink`, `border-line`, `bg-brand-600`); never raw hex values or default Tailwind palettes. No gradients anywhere.
+- Follow the editorial system in `DESIGN.md`: cool stone canvas, ink type, purple as a single accent, large real photographs. Do not rebuild Home as three identical icon cards or a drawn debit-card hero.
+- Register photos in `src/shared/data/media.ts`. Arabic `alt` and captions live in `*.ar.ts`. No generated people or handshake-in-glass-tower stock.
 - The site is Arabic RTL: use logical utilities (`ms-`, `me-`, `ps-`, `pe-`, `start-`, `end-`, `text-start`) and flip directional icons with `rtl:-scale-x-100`.
 - Give every route a unique Arabic title, description, canonical URL, and Open Graph metadata through the shared `Seo` component; add JSON-LD (`BankOrCreditUnion`, `BreadcrumbList`) where relevant.
 - Use semantic HTML, one clear `h1`, logical heading levels, labeled controls, visible focus, and 44px minimum interactive targets.

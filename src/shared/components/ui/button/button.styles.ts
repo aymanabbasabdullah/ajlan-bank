@@ -8,9 +8,9 @@ const base =
 
 const variants: Record<ButtonVariant, string> = {
   primary: 'bg-brand-600 text-white hover:bg-brand-700',
-  secondary: 'border border-line-strong bg-surface text-brand-700 hover:border-brand-300 hover:bg-brand-50',
-  ghost: 'text-brand-700 hover:bg-brand-50',
-  inverse: 'bg-white text-brand-900 hover:bg-sand-100',
+  secondary: 'border border-line-strong bg-surface text-ink hover:border-ink hover:bg-sand-100',
+  ghost: 'text-ink hover:bg-sand-100',
+  inverse: 'bg-white text-ink hover:bg-sand-100',
 }
 
 const sizes: Record<ButtonSize, string> = {

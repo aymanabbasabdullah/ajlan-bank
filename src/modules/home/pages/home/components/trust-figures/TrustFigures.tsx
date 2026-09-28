@@ -13,7 +13,7 @@ export function TrustFigures({ header }: ITrustFiguresProps) {
   const headingId = useId()
 
   return (
-    <Section tone="sand" spacing="compact" labelledBy={headingId}>
+    <Section spacing="compact" labelledBy={headingId}>
       <div className={styles.layout}>
         <SectionHeading id={headingId} title={header.title} description={header.description} className={styles.heading} />
         <div className={styles.figures}>

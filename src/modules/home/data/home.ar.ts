@@ -15,20 +15,7 @@ export const HOME_CONTENT: IHomeContent = {
     primary: { label: 'افتح حسابك', href: productPath('individuals', 'current-account') },
     secondary: { label: 'حلول تمويل المشاريع', href: ROUTES.financing },
     trustNote: 'مرخّص من البنك المركزي اليمني ويخضع لرقابته',
-    card: {
-      bankName: 'بنك عجلان',
-      type: 'بطاقة خصم مباشر',
-      maskedNumber: '•••• •••• •••• 2048',
-      expiry: '09/29',
-    },
-    activity: {
-      title: 'آخر العمليات',
-      items: [
-        { icon: 'transfer', label: 'حوالة واردة', meta: 'من الرياض', amount: '+ 250,000 ر.ي', direction: 'in' },
-        { icon: 'receipt', label: 'فاتورة الكهرباء', meta: 'سداد عبر التطبيق', amount: '− 18,400 ر.ي', direction: 'out' },
-        { icon: 'piggyBank', label: 'عائد التوفير', meta: 'الربع الثالث', amount: '+ 12,750 ر.ي', direction: 'in' },
-      ],
-    },
+    cardLink: { label: 'استكشف بطاقات فيزا', href: '#visa-cards' },
   },
 
   trustHeader: {
@@ -42,18 +29,18 @@ export const HOME_CONTENT: IHomeContent = {
   },
   paths: [
     {
-      icon: 'users',
+      mediaId: 'individualsStreet',
       title: 'للأفراد والأسر',
       description: 'حسابات وبطاقات وتمويل شخصي وحوالات تصل أهلك في اليوم نفسه.',
       highlights: [
         { label: 'الحساب الجاري', href: productPath('individuals', 'current-account') },
         { label: 'الودائع لأجل', href: productPath('individuals', 'term-deposits') },
-        { label: 'الحوالات المحلية والدولية', href: productPath('individuals', 'remittances') },
+        { label: 'بطاقات فيزا', href: '#visa-cards' },
       ],
       link: { label: 'جميع خدمات الأفراد', href: ROUTES.individuals },
     },
     {
-      icon: 'buildings',
+      mediaId: 'businessShop',
       title: 'للشركات والمؤسسات',
       description: 'حسابات مؤسسية وتجارة خارجية وتوطين رواتب ونقاط بيع مع مدير علاقة مخصص.',
       highlights: [
@@ -64,7 +51,7 @@ export const HOME_CONTENT: IHomeContent = {
       link: { label: 'جميع خدمات الشركات', href: ROUTES.business },
     },
     {
-      icon: 'chartUp',
+      mediaId: 'financingWorkshop',
       title: 'لأصحاب المشاريع',
       description: 'برامج تمويل للمنشآت الصغيرة والمتوسطة ورواد الأعمال والمعدات والمشاريع الكبرى.',
       highlights: [
@@ -79,6 +66,92 @@ export const HOME_CONTENT: IHomeContent = {
   featuredHeader: {
     title: 'خدمات يختارها عملاؤنا',
     description: 'أكثر خدماتنا طلبًا من الأفراد والشركات وأصحاب المشاريع.',
+  },
+
+  visa: {
+    eyebrow: 'إصدار البطاقات',
+    title: 'بطاقات فيزا عجلان',
+    description: 'أربع بطاقات تغطي يومك وسفرك ومشتريات منشأتك. مرّر لأسفل لتتقارب كل بطاقة وتكشف تفاصيلها.',
+    progressLabel: 'البطاقة',
+    sampleNote: '',
+    cards: [
+      {
+        tone: 'classic',
+        network: 'Visa',
+        name: 'فيزا كلاسيك',
+        tagline: 'لحسابك اليومي داخل اليمن',
+        description:
+          'بطاقة خصم مباشر مرتبطة بحسابك للسحب من صرافات البنك والشراء عبر نقاط البيع، مع إيقاف فوري من التطبيق.',
+        facts: [
+          { label: 'الإصدار', value: 'خلال 3 أيام عمل' },
+          { label: 'الرسوم', value: 'مجانية في السنة الأولى' },
+          { label: 'الاستخدام', value: 'محلي عبر شبكة فيزا' },
+        ],
+        highlights: ['سحب على مدار الساعة', 'حدود يومية قابلة للتعديل', 'إيقاف مؤقت من عجلان موبايل'],
+        holderLabel: 'حامل البطاقة',
+        maskedNumber: '•••• •••• •••• 4417',
+        expiryLabel: 'تنتهي',
+        expiry: '09/30',
+        cta: { label: 'تفاصيل فيزا كلاسيك', href: productPath('individuals', 'debit-card') },
+      },
+      {
+        tone: 'gold',
+        network: 'Visa',
+        name: 'فيزا الذهبية',
+        tagline: 'حدود أعلى وخدمة أولوية',
+        description:
+          'لبطاقات العملاء الذين يحتاجون سقف شراء أوسع وخدمة أسرع في الفروع، مع تغطية أوسع للعمليات داخل اليمن وخارجه.',
+        facts: [
+          { label: 'الإصدار', value: 'خلال 5 أيام عمل' },
+          { label: 'الحد اليومي', value: 'أعلى من الكلاسيك' },
+          { label: 'الخدمة', value: 'أولوية في الفرع ومركز الاتصال' },
+        ],
+        highlights: ['سقف شراء أعلى', 'خدمة عملاء مخصصة', 'إشعارات فورية لكل عملية'],
+        holderLabel: 'حامل البطاقة',
+        maskedNumber: '•••• •••• •••• 8802',
+        expiryLabel: 'تنتهي',
+        expiry: '11/30',
+        cta: { label: 'تفاصيل فيزا الذهبية', href: productPath('individuals', 'visa-gold') },
+      },
+      {
+        tone: 'travel',
+        network: 'Visa',
+        name: 'فيزا مسبقة الدفع',
+        tagline: 'للسفر والتسوق الإلكتروني',
+        description:
+          'بطاقة بالدولار تشحنها بالمبلغ الذي تحتاجه فقط، منفصلة عن حسابك الرئيسي، ومناسبة للدراسة والسفر والشراء عبر الإنترنت.',
+        facts: [
+          { label: 'العملة', value: 'دولار أمريكي' },
+          { label: 'الشحن', value: 'من الفرع أو التطبيق' },
+          { label: 'الاستخدام', value: 'دولي وإلكتروني' },
+        ],
+        highlights: ['إنفاق بحدود الرصيد', 'رمز تحقق لكل شراء إلكتروني', 'بطاقة إضافية لفرد من الأسرة'],
+        holderLabel: 'حامل البطاقة',
+        maskedNumber: '•••• •••• •••• 1964',
+        expiryLabel: 'تنتهي',
+        expiry: '03/31',
+        cta: { label: 'تفاصيل فيزا مسبقة الدفع', href: productPath('individuals', 'prepaid-card') },
+      },
+      {
+        tone: 'business',
+        network: 'Visa',
+        name: 'فيزا الأعمال',
+        tagline: 'لمصروفات الشركة والمشتريات',
+        description:
+          'بطاقة مؤسسية بصلاحيات محددة ومدير علاقة يتابع الحدود والتقارير، لتفصل مصروفات العمل عن الحسابات الشخصية.',
+        facts: [
+          { label: 'الإصدار', value: 'بعد اعتماد المفوضين' },
+          { label: 'الصلاحيات', value: 'حسب قرار الشركة' },
+          { label: 'التقارير', value: 'كشف شهري بالمصروفات' },
+        ],
+        highlights: ['حدود لكل موظف مفوّض', 'فصل مصروفات المنشأة', 'إيقاف فوري عند فقدان البطاقة'],
+        holderLabel: 'الجهة',
+        maskedNumber: '•••• •••• •••• 2271',
+        expiryLabel: 'تنتهي',
+        expiry: '07/30',
+        cta: { label: 'تفاصيل فيزا الأعمال', href: productPath('business', 'visa-business') },
+      },
+    ],
   },
 
   digital: {
@@ -144,8 +217,8 @@ export const HOME_CONTENT: IHomeContent = {
   newsLink: { label: 'جميع الأخبار', href: ROUTES.news },
 
   cta: {
-    title: 'زر أقرب فرع أو تحدّث معنا',
-    description: 'فريقنا جاهز للإجابة عن أسئلتك ومساعدتك في اختيار الخدمة المناسبة.',
+    title: 'نلتقيكم في الفرع، أو نردّ عليكم من الهاتف',
+    description: 'اثنا عشر فرعًا في ست محافظات، ومركز الاتصال 8001010 يعمل يوميًا لمساعدتك في اختيار الخدمة.',
     primary: { label: 'اعثر على فرع', href: ROUTES.branches },
     secondary: { label: 'تواصل معنا', href: ROUTES.contact },
   },

@@ -2,7 +2,9 @@ import { useId } from 'react'
 import { useParams } from 'react-router'
 import { NotFoundPage } from '@/modules/not-found'
 import { Breadcrumbs, Seo } from '@/shared/components/layout'
-import { Badge, Container, Section, SectionHeading, TextLink } from '@/shared/components/ui'
+import { Badge, Container, MediaFigure, Section, SectionHeading, TextLink } from '@/shared/components/ui'
+import { MEDIA } from '@/shared/data/media'
+import { MEDIA_COPY } from '@/shared/data/media.ar'
 import { ROUTES, newsPath } from '@/shared/constants/routes'
 import { formatDate } from '@/shared/utils/format'
 import { NewsGrid } from '../../components/news-grid/NewsGrid'
@@ -42,6 +44,13 @@ export function NewsDetailPage() {
             </div>
             <h1 className={newsDetailStyles.title}>{article.title}</h1>
             <p className={newsDetailStyles.excerpt}>{article.excerpt}</p>
+            <MediaFigure
+              media={MEDIA[article.mediaId]}
+              alt={MEDIA_COPY[article.mediaId].alt}
+              caption={MEDIA_COPY[article.mediaId].caption}
+              ratio="16/10"
+              className={newsDetailStyles.figure}
+            />
           </Container>
         </header>
         <Container className={newsDetailStyles.body}>
@@ -55,7 +64,7 @@ export function NewsDetailPage() {
           </TextLink>
         </Container>
       </article>
-      <Section tone="sand" labelledBy={moreHeadingId}>
+      <Section labelledBy={moreHeadingId}>
         <SectionHeading id={moreHeadingId} title={content.moreNewsTitle} />
         <NewsGrid articles={getOtherNews(article.slug)} />
       </Section>

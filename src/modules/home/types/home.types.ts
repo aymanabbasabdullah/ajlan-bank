@@ -1,4 +1,31 @@
+import type { MediaId } from '@/shared/data/media'
 import type { ICta, IFeature, ILink, ISectionHeader, ISeoMeta, IconName } from '@/shared/types'
+
+export type VisaCardTone = 'classic' | 'gold' | 'travel' | 'business'
+
+export interface IVisaCard {
+  tone: VisaCardTone
+  network: string
+  name: string
+  tagline: string
+  description: string
+  facts: { label: string; value: string }[]
+  highlights: string[]
+  holderLabel: string
+  maskedNumber: string
+  expiryLabel: string
+  expiry: string
+  cta: ILink
+}
+
+export interface IVisaCardsSection {
+  eyebrow: string
+  title: string
+  description: string
+  progressLabel: string
+  sampleNote: string
+  cards: IVisaCard[]
+}
 
 export interface IVisualTransaction {
   icon: IconName
@@ -14,20 +41,11 @@ export interface IHomeHero {
   primary: ILink
   secondary: ILink
   trustNote: string
-  card: {
-    bankName: string
-    type: string
-    maskedNumber: string
-    expiry: string
-  }
-  activity: {
-    title: string
-    items: IVisualTransaction[]
-  }
+  cardLink: ILink
 }
 
 export interface IAudiencePath {
-  icon: IconName
+  mediaId: MediaId
   title: string
   description: string
   highlights: ILink[]
@@ -58,6 +76,7 @@ export interface IHomeContent {
   pathsHeader: ISectionHeader
   paths: IAudiencePath[]
   featuredHeader: ISectionHeader
+  visa: IVisaCardsSection
   digital: IDigitalBanking
   valuesHeader: ISectionHeader
   values: IFeature[]

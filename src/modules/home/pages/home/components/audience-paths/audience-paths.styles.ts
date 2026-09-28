@@ -1,12 +1,16 @@
 export const audiencePathsStyles = {
-  grid: 'grid gap-5 lg:grid-cols-3',
-  card: 'flex h-full flex-col',
-  title: 'mt-5 text-xl leading-[1.5] font-semibold',
+  layout: 'grid gap-6 lg:grid-cols-12 lg:gap-8',
+  featured: 'lg:col-span-7',
+  stack: 'grid gap-6 lg:col-span-5',
+  tile: 'group flex h-full flex-col overflow-hidden rounded-xl border border-line bg-surface',
+  photo: 'overflow-hidden',
+  image: 'aspect-16/10 w-full object-cover transition-transform duration-300 ease-out-soft motion-safe:group-hover:scale-[1.03]',
+  compactImage: 'aspect-3/2 w-full object-cover transition-transform duration-300 ease-out-soft motion-safe:group-hover:scale-[1.03]',
+  body: 'flex flex-1 flex-col p-6 md:p-8',
+  title: 'text-xl leading-[1.4] font-semibold md:text-2xl',
   description: 'mt-2 text-body',
-  highlights: 'mt-6 flex-1 divide-y divide-line border-y border-line',
+  highlights: 'mt-5 flex-1 space-y-2',
   highlight:
-    'group/item flex min-h-12 items-center justify-between gap-3 py-2 font-medium text-ink transition-colors duration-200 hover:text-brand-700',
-  highlightArrow:
-    'text-muted transition-transform duration-200 group-hover/item:-translate-x-1 group-hover/item:text-brand-600 motion-reduce:transition-none',
-  more: 'mt-4',
+    'block text-[15px] font-medium text-ink transition-colors duration-200 hover:text-brand-700',
+  more: 'mt-5',
 } as const

@@ -12,7 +12,7 @@ export function LatestNews({ header, link }: ILatestNewsProps) {
   const headingId = useId()
 
   return (
-    <Section tone="sand" labelledBy={headingId}>
+    <Section labelledBy={headingId}>
       <SectionHeading
         id={headingId}
         title={header.title}

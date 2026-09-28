@@ -11,7 +11,7 @@ export function FeaturedProducts({ header }: IFeaturedProductsProps) {
   const headingId = useId()
 
   return (
-    <Section tone="sand" labelledBy={headingId}>
+    <Section labelledBy={headingId}>
       <SectionHeading id={headingId} title={header.title} description={header.description} />
       <ProductGrid products={getFeaturedProducts()} />
     </Section>

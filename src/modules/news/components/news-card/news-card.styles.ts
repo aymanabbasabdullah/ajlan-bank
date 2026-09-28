@@ -1,8 +1,15 @@
 export const newsCardStyles = {
-  card: 'group flex h-full flex-col',
+  card: 'group relative flex h-full flex-col overflow-hidden p-0 md:p-0',
+  photo: 'overflow-hidden bg-sand-100',
+  image: 'w-full object-cover transition-transform duration-300 ease-out-soft motion-safe:group-hover:scale-[1.03]',
+  featuredImage: 'aspect-16/10',
+  compactImage: 'aspect-3/2',
+  body: 'flex flex-1 flex-col p-6 md:p-7',
   meta: 'flex flex-wrap items-center justify-between gap-3',
   date: 'tabular text-sm text-muted',
-  title: 'mt-5 text-lg leading-[1.6] font-semibold',
+  title: 'mt-5 font-semibold',
+  featuredTitle: 'text-xl leading-[1.45] md:text-2xl',
+  compactTitle: 'text-lg leading-[1.6]',
   link: 'transition-colors duration-200 after:absolute after:inset-0 after:rounded-xl group-hover:text-brand-700 focus-visible:outline-none focus-visible:after:outline-2 focus-visible:after:outline-offset-2 focus-visible:after:outline-brand-300',
   excerpt: 'mt-3 flex-1 text-body',
 } as const

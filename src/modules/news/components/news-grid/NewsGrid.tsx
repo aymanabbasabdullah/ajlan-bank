@@ -8,13 +8,32 @@ interface INewsGridProps {
 }
 
 export function NewsGrid({ articles }: INewsGridProps) {
+  const [featured, second, third, ...rest] = articles
+
   return (
-    <Reveal as="ul" stagger className={newsGridStyles.grid}>
-      {articles.map((article) => (
-        <li key={article.slug}>
-          <NewsCard article={article} />
-        </li>
-      ))}
-    </Reveal>
+    <div>
+      {featured && (
+        <Reveal className={newsGridStyles.lead}>
+          <div className={newsGridStyles.featured}>
+            <NewsCard article={featured} featured />
+          </div>
+          {(second || third) && (
+            <div className={newsGridStyles.side}>
+              {second && <NewsCard article={second} />}
+              {third && <NewsCard article={third} />}
+            </div>
+          )}
+        </Reveal>
+      )}
+      {rest.length > 0 && (
+        <Reveal as="ul" stagger className={newsGridStyles.rest}>
+          {rest.map((article) => (
+            <li key={article.slug}>
+              <NewsCard article={article} />
+            </li>
+          ))}
+        </Reveal>
+      )}
+    </div>
   )
 }

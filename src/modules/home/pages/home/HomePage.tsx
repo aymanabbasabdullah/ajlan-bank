@@ -8,6 +8,7 @@ import { FeaturedProducts } from './components/featured-products/FeaturedProduct
 import { HomeHero } from './components/hero/HomeHero'
 import { LatestNews } from './components/latest-news/LatestNews'
 import { TrustFigures } from './components/trust-figures/TrustFigures'
+import { VisaCardsSection } from './components/visa-cards/VisaCardsSection'
 
 export function HomePage() {
   const content = HOME_CONTENT
@@ -15,10 +16,11 @@ export function HomePage() {
   return (
     <>
       <Seo meta={content.seo} jsonLd={[bankJsonLd()]} />
-      <HomeHero hero={content.hero} />
+      <HomeHero hero={content.hero} cards={content.visa.cards} />
       <TrustFigures header={content.trustHeader} />
       <AudiencePaths header={content.pathsHeader} paths={content.paths} />
       <FeaturedProducts header={content.featuredHeader} />
+      <VisaCardsSection visa={content.visa} />
       <DigitalBanking digital={content.digital} />
       <FeaturesSection header={content.valuesHeader} items={content.values} columns={4} variant="plain" />
       <LatestNews header={content.newsHeader} link={content.newsLink} />
