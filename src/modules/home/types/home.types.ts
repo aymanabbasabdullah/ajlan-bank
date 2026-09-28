@@ -1,20 +1,13 @@
 import type { MediaId } from '@/shared/data/media'
-import type { ICta, IFeature, ILink, ISectionHeader, ISeoMeta, IconName } from '@/shared/types'
+import type { ICta, IFeature, ILink, ISectionHeader, ISeoMeta, IVisaCardVisual, IconName } from '@/shared/types'
 
-export type VisaCardTone = 'classic' | 'gold' | 'travel' | 'business'
+export type { VisaCardTone } from '@/shared/types'
 
-export interface IVisaCard {
-  tone: VisaCardTone
-  network: string
-  name: string
+export interface IVisaCard extends IVisaCardVisual {
   tagline: string
   description: string
   facts: { label: string; value: string }[]
   highlights: string[]
-  holderLabel: string
-  maskedNumber: string
-  expiryLabel: string
-  expiry: string
   cta: ILink
 }
 

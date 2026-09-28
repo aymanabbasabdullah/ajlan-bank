@@ -14,9 +14,6 @@ const HERO_MEDIA = MEDIA.heroStreet
 const HERO_COPY = MEDIA_COPY.heroStreet
 
 export function HomeHero({ hero, cards }: IHomeHeroProps) {
-  const front = cards[0]
-  const rear = cards[1] ?? cards[0]
-
   return (
     <section className={styles.section}>
       <div className={styles.photo}>
@@ -53,9 +50,9 @@ export function HomeHero({ hero, cards }: IHomeHeroProps) {
               {hero.cardLink.label}
             </TextLink>
           </Reveal>
-          {front && rear && (
+          {cards.length > 0 && (
             <Reveal className={styles.visual}>
-              <HeroVisaDeck front={front} rear={rear} />
+              <HeroVisaDeck cards={cards} />
             </Reveal>
           )}
         </div>

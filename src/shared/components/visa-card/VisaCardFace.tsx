@@ -1,14 +1,14 @@
 import { SITE } from '@/shared/data/site.ar'
+import type { IVisaCardVisual, VisaCardFaceState } from '@/shared/types'
 import { cn } from '@/shared/utils/cn'
-import type { IVisaCard } from '../../../../types/home.types'
-import { visaFaceStyles as styles } from './visa-cards.styles'
+import { visaCardFaceStyles as styles } from './visa-card.styles'
 
 interface IVisaCardFaceProps {
-  card: IVisaCard
-  state: 'active' | 'passed' | 'next'
+  card: IVisaCardVisual
+  state?: VisaCardFaceState
 }
 
-export function VisaCardFace({ card, state }: IVisaCardFaceProps) {
+export function VisaCardFace({ card, state = 'active' }: IVisaCardFaceProps) {
   return (
     <article
       data-visa-face=""
@@ -60,11 +60,11 @@ export function VisaCardFace({ card, state }: IVisaCardFaceProps) {
         </p>
       </div>
       <div className={styles.meta}>
-        <div>
+        <div className={styles.metaName}>
           <p className={styles.metaLabel}>{card.holderLabel}</p>
           <p className={styles.metaValue}>{card.name}</p>
         </div>
-        <div>
+        <div className={styles.metaExpiry}>
           <p className={styles.metaLabel}>{card.expiryLabel}</p>
           <p className={styles.metaValue} dir="ltr">
             {card.expiry}

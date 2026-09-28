@@ -9,6 +9,7 @@ export const PRODUCT_DETAIL_CONTENT: IProductDetailContent = {
   faqTitle: 'أسئلة شائعة',
   relatedTitle: 'خدمات ذات صلة',
   notFoundTitle: 'الخدمة غير موجودة',
+  cardModelLabel: 'نموذج البطاقة',
   cta: {
     title: 'هل ترغب في التقديم أو معرفة التفاصيل؟',
     description: 'تواصل مع فريقنا أو زر أقرب فرع، وسنرشدك إلى الخيار الأنسب والمستندات اللازمة.',

@@ -12,4 +12,7 @@ export const productDetailStyles = {
   featureText: 'mt-1.5 text-body',
 
   requirements: 'grid gap-5 lg:grid-cols-2',
+  visaAside: 'lg:col-span-5',
+  visaStage: 'relative mx-auto w-full max-w-[440px] rounded-2xl bg-ink p-5 sm:p-7 lg:ms-auto lg:me-0',
+  visaDeck: 'relative aspect-[86/54] w-full',
 } as const

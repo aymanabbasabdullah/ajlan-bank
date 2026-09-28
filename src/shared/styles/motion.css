@@ -70,20 +70,120 @@ dialog[data-drawer]::backdrop {
 }
 
 [data-visa-face] {
-  transform-style: preserve-3d;
   backface-visibility: hidden;
 }
 
-[data-hero-card] {
-  animation: hero-card-float 7s var(--ease-out-soft) infinite alternate;
+[data-hero-layer] {
+  will-change: transform;
 }
 
-@keyframes hero-card-float {
+[data-hero-layer='back'] {
+  z-index: 1;
+  transform: rotate(-8deg) translate(-5%, 12%) scale(0.95);
+  animation: hero-idle-back 8s var(--ease-out-soft) infinite alternate;
+}
+
+[data-hero-layer='mid'] {
+  z-index: 2;
+  transform: rotate(7deg) translate(6%, 10%) scale(0.97);
+  animation: hero-idle-mid 7s var(--ease-out-soft) infinite alternate;
+}
+
+[data-hero-layer='front'] {
+  z-index: 3;
+  transform: rotateX(6deg) rotateZ(-2deg);
+  animation: hero-idle-front 6.5s var(--ease-out-soft) infinite alternate;
+}
+
+@keyframes hero-idle-back {
   from {
-    transform: rotateX(12deg) rotateZ(8deg) translateY(4px);
+    transform: rotate(-8deg) translate(-5%, 12%) scale(0.95);
   }
   to {
-    transform: rotateX(9deg) rotateZ(5deg) translateY(-10px);
+    transform: rotate(-6deg) translate(-6%, 9%) scale(0.95);
+  }
+}
+
+@keyframes hero-idle-mid {
+  from {
+    transform: rotate(7deg) translate(6%, 10%) scale(0.97);
+  }
+  to {
+    transform: rotate(9deg) translate(7%, 7%) scale(0.97);
+  }
+}
+
+@keyframes hero-idle-front {
+  from {
+    transform: rotateX(6deg) rotateZ(-2deg) translateY(0);
+  }
+  to {
+    transform: rotateX(4deg) rotateZ(-1deg) translateY(-8px);
+  }
+}
+
+@media (min-width: 1024px) {
+  [data-hero-layer='back'] {
+    transform: rotate(-14deg) translate(-12%, 18%) scale(0.93);
+  }
+
+  [data-hero-layer='mid'] {
+    transform: rotate(12deg) translate(13%, 16%) scale(0.96);
+  }
+
+  @keyframes hero-idle-back {
+    from {
+      transform: rotate(-14deg) translate(-12%, 18%) scale(0.93);
+    }
+    to {
+      transform: rotate(-11deg) translate(-14%, 13%) scale(0.93);
+    }
+  }
+
+  @keyframes hero-idle-mid {
+    from {
+      transform: rotate(12deg) translate(13%, 16%) scale(0.96);
+    }
+    to {
+      transform: rotate(15deg) translate(15%, 11%) scale(0.96);
+    }
+  }
+
+  @keyframes hero-idle-front {
+    from {
+      transform: rotateX(12deg) rotateZ(-4deg) translateY(4px);
+    }
+    to {
+      transform: rotateX(8deg) rotateZ(-1deg) translateY(-12px);
+    }
+  }
+}
+
+@media (min-width: 1440px) {
+  [data-hero-layer='back'] {
+    transform: rotate(-16deg) translate(-14%, 20%) scale(0.92);
+  }
+
+  [data-hero-layer='mid'] {
+    transform: rotate(13deg) translate(15%, 17%) scale(0.96);
+  }
+
+  @keyframes hero-idle-back {
+    from {
+      transform: rotate(-16deg) translate(-14%, 20%) scale(0.92);
+    }
+    to {
+      transform: rotate(-13deg) translate(-16%, 15%) scale(0.92);
+    }
+  }
+
+  @keyframes hero-idle-mid {
+    from {
+      transform: rotate(13deg) translate(15%, 17%) scale(0.96);
+    }
+    to {
+      transform: rotate(16deg) translate(17%, 12%) scale(0.96);
+    }
   }
 }
 
@@ -91,11 +191,14 @@ dialog[data-drawer]::backdrop {
   [data-reveal],
   [data-reveal] > *,
   [data-visa-face],
-  [data-hero-card],
   dialog[data-drawer] {
     opacity: 1 !important;
     transform: none !important;
     transition: none !important;
+    animation: none !important;
+  }
+
+  [data-hero-layer] {
     animation: none !important;
   }
 

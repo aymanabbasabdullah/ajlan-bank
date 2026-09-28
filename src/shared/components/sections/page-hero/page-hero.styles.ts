@@ -6,4 +6,5 @@ export const pageHeroStyles = {
   lead: 'mt-4 max-w-xl text-[17px] leading-[1.8] text-body md:text-lg',
   extra: 'mt-8 flex flex-wrap gap-3',
   media: 'lg:col-span-5',
+  aside: 'lg:col-span-5',
 } as const

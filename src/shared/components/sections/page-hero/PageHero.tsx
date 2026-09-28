@@ -13,29 +13,34 @@ interface IPageHeroProps {
   breadcrumbs: ILink[]
   media?: IMediaAsset
   mediaCopy?: IMediaCopy
+  aside?: ReactNode
   children?: ReactNode
 }
 
-export function PageHero({ title, lead, breadcrumbs, media, mediaCopy, children }: IPageHeroProps) {
+export function PageHero({ title, lead, breadcrumbs, media, mediaCopy, aside, children }: IPageHeroProps) {
+  const visual = aside ? (
+    <div className={pageHeroStyles.aside}>{aside}</div>
+  ) : media && mediaCopy ? (
+    <MediaFigure
+      media={media}
+      alt={mediaCopy.alt}
+      caption={mediaCopy.caption}
+      ratio="16/10"
+      className={pageHeroStyles.media}
+    />
+  ) : null
+
   return (
     <header className={pageHeroStyles.wrapper}>
       <Container>
         <Breadcrumbs items={breadcrumbs} />
-        <div className={media ? pageHeroStyles.grid : undefined}>
+        <div className={visual ? pageHeroStyles.grid : undefined}>
           <div className={pageHeroStyles.body}>
             <h1 className={pageHeroStyles.title}>{title}</h1>
             <p className={pageHeroStyles.lead}>{lead}</p>
             {children && <div className={pageHeroStyles.extra}>{children}</div>}
           </div>
-          {media && mediaCopy && (
-            <MediaFigure
-              media={media}
-              alt={mediaCopy.alt}
-              caption={mediaCopy.caption}
-              ratio="16/10"
-              className={pageHeroStyles.media}
-            />
-          )}
+          {visual}
         </div>
       </Container>
     </header>

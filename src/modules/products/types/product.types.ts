@@ -50,5 +50,6 @@ export interface IProductDetailContent {
   faqTitle: string
   relatedTitle: string
   notFoundTitle: string
+  cardModelLabel: string
   cta: ICta
 }

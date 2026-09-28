@@ -1,8 +1,7 @@
-import { ButtonLink, Container, IslamicPattern } from '@/shared/components/ui'
+import { ButtonLink, Container, IslamicPattern, VisaCardFace } from '@/shared/components/ui'
 import { usePinnedScroll } from '@/shared/hooks/usePinnedScroll'
 import { cn } from '@/shared/utils/cn'
 import type { IVisaCard, IVisaCardsSection } from '../../../../types/home.types'
-import { VisaCardFace } from './VisaCardFace'
 import { visaCardsStyles as styles } from './visa-cards.styles'
 
 interface IVisaCardsSectionProps {

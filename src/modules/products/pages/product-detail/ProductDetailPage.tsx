@@ -2,13 +2,16 @@ import { useParams } from 'react-router'
 import { NotFoundPage } from '@/modules/not-found'
 import { Seo } from '@/shared/components/layout'
 import { CtaBanner, FaqSection, PageHero } from '@/shared/components/sections'
+import { VisaCardFace } from '@/shared/components/ui'
 import { heroMediaForProduct } from '@/shared/data/media.ar'
+import { getVisaCardVisual } from '@/shared/data/visa-cards.ar'
 import { PRODUCT_DETAIL_CONTENT } from '../../data/product-detail.ar'
 import { getCatalog, getProduct, getProductHref, getRelatedProducts, isProductSection } from '../../utils/catalog'
 import { ProductFacts } from './components/ProductFacts'
 import { ProductFeatures } from './components/ProductFeatures'
 import { ProductRequirements } from './components/ProductRequirements'
 import { RelatedProducts } from './components/RelatedProducts'
+import { productDetailStyles as styles } from './product-detail.styles'
 
 export function ProductDetailPage() {
   const { section = '', slug = '' } = useParams()
@@ -23,6 +26,8 @@ export function ProductDetailPage() {
     { label: catalog.label, href: catalog.path },
     { label: product.name, href: path },
   ]
+  const visa = getVisaCardVisual(product.slug)
+  const heroMedia = visa ? undefined : heroMediaForProduct(product.slug)
 
   return (
     <>
@@ -31,7 +36,17 @@ export function ProductDetailPage() {
         title={product.name}
         lead={product.summary}
         breadcrumbs={breadcrumbs}
-        {...heroMediaForProduct(product.slug)}
+        media={heroMedia?.media}
+        mediaCopy={heroMedia?.mediaCopy}
+        aside={
+          visa ? (
+            <div className={styles.visaStage}>
+              <div className={styles.visaDeck} role="img" aria-label={content.cardModelLabel}>
+                <VisaCardFace card={visa} />
+              </div>
+            </div>
+          ) : undefined
+        }
       >
         <ProductFacts label={content.factsLabel} facts={product.facts} />
       </PageHero>

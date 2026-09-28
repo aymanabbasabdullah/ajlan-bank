@@ -1,4 +1,5 @@
 import { ROUTES, productPath } from '@/shared/constants/routes'
+import { VISA_CARD_VISUALS } from '@/shared/data/visa-cards.ar'
 import type { IHomeContent } from '../types/home.types'
 
 export const HOME_CONTENT: IHomeContent = {
@@ -76,9 +77,7 @@ export const HOME_CONTENT: IHomeContent = {
     sampleNote: '',
     cards: [
       {
-        tone: 'classic',
-        network: 'Visa',
-        name: 'فيزا كلاسيك',
+        ...VISA_CARD_VISUALS['debit-card'],
         tagline: 'لحسابك اليومي داخل اليمن',
         description:
           'بطاقة خصم مباشر مرتبطة بحسابك للسحب من صرافات البنك والشراء عبر نقاط البيع، مع إيقاف فوري من التطبيق.',
@@ -88,16 +87,10 @@ export const HOME_CONTENT: IHomeContent = {
           { label: 'الاستخدام', value: 'محلي عبر شبكة فيزا' },
         ],
         highlights: ['سحب على مدار الساعة', 'حدود يومية قابلة للتعديل', 'إيقاف مؤقت من عجلان موبايل'],
-        holderLabel: 'حامل البطاقة',
-        maskedNumber: '•••• •••• •••• 4417',
-        expiryLabel: 'تنتهي',
-        expiry: '09/30',
         cta: { label: 'تفاصيل فيزا كلاسيك', href: productPath('individuals', 'debit-card') },
       },
       {
-        tone: 'gold',
-        network: 'Visa',
-        name: 'فيزا الذهبية',
+        ...VISA_CARD_VISUALS['visa-gold'],
         tagline: 'حدود أعلى وخدمة أولوية',
         description:
           'لبطاقات العملاء الذين يحتاجون سقف شراء أوسع وخدمة أسرع في الفروع، مع تغطية أوسع للعمليات داخل اليمن وخارجه.',
@@ -107,16 +100,10 @@ export const HOME_CONTENT: IHomeContent = {
           { label: 'الخدمة', value: 'أولوية في الفرع ومركز الاتصال' },
         ],
         highlights: ['سقف شراء أعلى', 'خدمة عملاء مخصصة', 'إشعارات فورية لكل عملية'],
-        holderLabel: 'حامل البطاقة',
-        maskedNumber: '•••• •••• •••• 8802',
-        expiryLabel: 'تنتهي',
-        expiry: '11/30',
         cta: { label: 'تفاصيل فيزا الذهبية', href: productPath('individuals', 'visa-gold') },
       },
       {
-        tone: 'travel',
-        network: 'Visa',
-        name: 'فيزا مسبقة الدفع',
+        ...VISA_CARD_VISUALS['prepaid-card'],
         tagline: 'للسفر والتسوق الإلكتروني',
         description:
           'بطاقة بالدولار تشحنها بالمبلغ الذي تحتاجه فقط، منفصلة عن حسابك الرئيسي، ومناسبة للدراسة والسفر والشراء عبر الإنترنت.',
@@ -126,16 +113,10 @@ export const HOME_CONTENT: IHomeContent = {
           { label: 'الاستخدام', value: 'دولي وإلكتروني' },
         ],
         highlights: ['إنفاق بحدود الرصيد', 'رمز تحقق لكل شراء إلكتروني', 'بطاقة إضافية لفرد من الأسرة'],
-        holderLabel: 'حامل البطاقة',
-        maskedNumber: '•••• •••• •••• 1964',
-        expiryLabel: 'تنتهي',
-        expiry: '03/31',
         cta: { label: 'تفاصيل فيزا مسبقة الدفع', href: productPath('individuals', 'prepaid-card') },
       },
       {
-        tone: 'business',
-        network: 'Visa',
-        name: 'فيزا الأعمال',
+        ...VISA_CARD_VISUALS['visa-business'],
         tagline: 'لمصروفات الشركة والمشتريات',
         description:
           'بطاقة مؤسسية بصلاحيات محددة ومدير علاقة يتابع الحدود والتقارير، لتفصل مصروفات العمل عن الحسابات الشخصية.',
@@ -145,10 +126,6 @@ export const HOME_CONTENT: IHomeContent = {
           { label: 'التقارير', value: 'كشف شهري بالمصروفات' },
         ],
         highlights: ['حدود لكل موظف مفوّض', 'فصل مصروفات المنشأة', 'إيقاف فوري عند فقدان البطاقة'],
-        holderLabel: 'الجهة',
-        maskedNumber: '•••• •••• •••• 2271',
-        expiryLabel: 'تنتهي',
-        expiry: '07/30',
         cta: { label: 'تفاصيل فيزا الأعمال', href: productPath('business', 'visa-business') },
       },
     ],
